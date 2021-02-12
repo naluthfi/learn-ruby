@@ -1,0 +1,48 @@
+<%= form_with(model: idea) do |form_edit| %>
+  <% if idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+        <% idea.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form_edit.label :name %>
+  </div>
+  <div class="field">
+    <%= form_edit.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form_edit.label :description %>
+  </div>
+  <div class="field">
+    <%= form_edit.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form_edit.label :picture %>
+  </div>
+  <div class="field">
+    <%= form_edit.file_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form_edit.label :status %>
+  </div>
+  <div class="field">
+    <%= form_edit.radio_button :status, "Approved" %>
+    <%= form_edit.label :status_approved, "Approve" %>
+    <%= form_edit.radio_button :status, "Rejected" %>
+    <%= form_edit.label :status_rejected, "Reject" %>
+  </div>
+
+  <div class="actions">
+    <%= form_edit.submit %>
+  </div>
+<% end %>

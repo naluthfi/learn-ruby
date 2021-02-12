@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Detail Idea</h1>
+
 <p>
   <strong>Name:</strong>
   <%= @idea.name %>
@@ -13,6 +15,11 @@
 <p>
   <strong>Picture:</strong>
   <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @idea.status %>
 </p>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |

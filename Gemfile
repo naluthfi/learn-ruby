@@ -9,6 +9,10 @@ gem 'rails', '~> 6.1.1'
 gem 'sqlite3', '~> 1.4'
 # used on adding picture
 gem 'carrierwave'
+# used on front end development
+gem 'bootstrap', '~> 5.0.0.beta1'
+# Bootstrap JavaScript depends on jQuery
+gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

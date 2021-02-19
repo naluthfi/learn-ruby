@@ -51,6 +51,26 @@ class IdeasController < ApplicationController
     end
   end
 
+  # POST /ideas/1/approve
+  def approve
+    @idea = Idea.find(params[:id])
+    @idea.update_attribute(:status, :approved)
+    respond_to do |format|
+        format.html { redirect_to ideas_url, notice: 'Idea was successfully approved.' }
+        format.json { head :no_content }
+    end
+  end
+
+  # POST /ideas/1/reject
+  def reject
+    @idea = Idea.find(params[:id])
+    @idea.update_attribute(:status, :rejected)
+    respond_to do |format|
+        format.html { redirect_to ideas_url, notice: 'Idea was successfully rejected.' }
+        format.json { head :no_content }
+    end
+  end
+
   # DELETE /ideas/1
   # DELETE /ideas/1.json
   def destroy

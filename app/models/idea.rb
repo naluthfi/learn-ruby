@@ -1,4 +1,4 @@
 class Idea < ApplicationRecord
     mount_uploader :picture, PictureUploader
-    enum status: [:Pending, :Approved, :Rejected]
+    enum status: [:pending, :approved, :rejected]
 end

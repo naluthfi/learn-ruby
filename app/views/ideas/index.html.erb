@@ -4,7 +4,7 @@
 
 <div class="row justify-content-end">
     <div class="col-2">
-      <%= link_to 'New Idea', new_idea_path, class: "btn btn-success" %>
+      <%= link_to 'Create New Idea', new_idea_path, class: "btn btn-success" %>
     </div>
 </div>
 
@@ -28,8 +28,9 @@
         <td><%= link_to idea.name, idea %></td>
         <td><%= idea.description %></td>
         <td><%= image_tag idea.picture_url, width: '50%' if idea.picture.present? %></td>
-        <td><%= idea.status %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea), class: "btn btn-primary" %></td>
+        <td><%= idea.status.humanize %></td>
+        <td><%= link_to 'Approve', ideas_approve_url(idea), :confirm => "Are you sure want to approve it?", :method => :post, class: "btn btn-success" %></td>
+        <td><%= link_to 'Reject', ideas_reject_url(idea), :confirm => "Are you sure want to reject it?", :method => :post, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

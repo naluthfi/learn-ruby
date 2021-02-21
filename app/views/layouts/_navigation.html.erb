@@ -9,11 +9,11 @@
     </button>
     <div class="nav justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="/ideas">Ideas</a>
+        <li class="nav-item inactive <%= 'active' if params[:selected] != 'ideas' %>">
+            <a class="nav-link" href="/ideas?selected=ideas">Ideas</a>
         </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/pages/info">Info</a>
+        <li class="nav-item inactive <%= 'active' if params[:selected] != 'info' %>">
+            <a class="nav-link" href="/pages/info?selected=info">Info</a>
         </li>
         </ul>
     </div>
